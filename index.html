@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,37 +19,107 @@
                 extend: {
                     colors: {
                         charcoal: '#1A1A1A',
+                        charcoalLight: '#2D2D2D',
+                        charcoalDark: '#141414',
                         wood: '#A67C52',
+                        woodLight: '#B8956A',
+                        woodDark: '#8B6540',
+                        woodDarker: '#6B4F30',
                         cream: '#F5F5DC',
-                        'wood-light': '#B8956A',
-                        'wood-dark': '#8B6540',
+                        creamLight: '#FFFFF0',
+                        creamDark: '#E8E8D0',
                     },
                     fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
+                        serif: ['Playfair Display', 'Cormorant Garamond', 'serif'],
                         sans: ['Inter', 'sans-serif'],
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.8s ease-out forwards',
-                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'fade-in-down': 'fadeInDown 0.8s ease-out forwards',
+                        'fade-in-left': 'fadeInLeft 0.8s ease-out forwards',
+                        'fade-in-right': 'fadeInRight 0.8s ease-out forwards',
                         'float': 'float 3s ease-in-out infinite',
-                        'parallax': 'parallax 10s linear infinite',
+                        'float-delayed': 'float 3s ease-in-out 1.5s infinite',
+                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+                        'shake': 'shake 0.5s ease-in-out',
+                        'wiggle': 'wiggle 0.5s ease-in-out infinite',
+                        'bounce-slow': 'bounceSlow 2s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'gradient-x': 'gradientX 3s ease infinite',
+                        'blob': 'blob 7s ease-in-out infinite',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                        'rotate-in': 'rotateIn 0.6s ease-out forwards',
+                        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
                     },
                     keyframes: {
                         fadeIn: {
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' },
                         },
-                        slideUp: {
+                        fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        fadeInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
+                            '50%': { transform: 'translateY(-15px)' },
                         },
-                        parallax: {
-                            '0%': { backgroundPosition: '0% 0%' },
-                            '100%': { backgroundPosition: '100% 100%' },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.02)' },
+                        },
+                        shake: {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '25%': { transform: 'translateX(-5px)' },
+                            '75%': { transform: 'translateX(5px)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        bounceSlow: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        gradientX: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        rotateIn: {
+                            '0%': { opacity: '0', transform: 'rotate(-10deg) scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'rotate(0deg) scale(1)' },
+                        },
+                        glowPulse: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(166, 124, 82, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(166, 124, 82, 0.6)' },
                         },
                     },
                 },
@@ -64,196 +134,771 @@
             --wood: #A67C52;
             --cream: #F5F5DC;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--cream);
             color: var(--charcoal);
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
         }
-        
-        /* Glassmorphism */
+
+        /* ========== GLASSMORPHISM ========== */
         .glass {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .glass-dark {
             background: rgba(26, 26, 26, 0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        /* Parallax Background */
+
+        .glass-wood {
+            background: rgba(166, 124, 82, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(166, 124, 82, 0.3);
+        }
+
+        /* ========== HOVER EFFECTS ========== */
+        .lift-up {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .lift-up:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(166, 124, 82, 0.4);
+        }
+
+        .scale-hover {
+            transition: all 0.3s ease;
+        }
+
+        .scale-hover:hover {
+            transform: scale(1.05);
+        }
+
+        /* ========== BUTTON STYLES ========== */
+        .btn-primary {
+            background: linear-gradient(135deg, #A67C52 0%, #B8956A 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #8B6540 0%, #A67C52 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(166, 124, 82, 0.4);
+        }
+
+        .btn-glow {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        /* ========== PARALLAX BACKGROUND ========== */
         .parallax-bg {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23A67C52" stroke-width="0.3" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
             background-size: cover;
         }
-        
-        /* Hero Gradient */
+
+        .pattern-dots {
+            background-image: radial-gradient(#A67C52 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .pattern-grid {
+            background-image: 
+                linear-gradient(#A67C52 1px, transparent 1px),
+                linear-gradient(90deg, #A67C52 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* ========== HERO GRADIENTS ========== */
         .hero-gradient {
             background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 50%, #1A1A1A 100%);
         }
-        
-        /* Card Hover Effects */
+
+        .hero-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-shine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            animation: shimmer 3s infinite;
+        }
+
+        /* ========== CARD STYLES ========== */
         .menu-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .menu-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(166, 124, 82, 0.3);
         }
-        
+
         .menu-card .price-tag {
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
         }
-        
+
         .menu-card:hover .price-tag {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Navigation */
+
+        /* ========== NAVIGATION ========== */
         .nav-scroll {
             transition: all 0.3s ease;
         }
-        
+
         .nav-scroll.scrolled {
             background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-        
-        /* Tab Filters */
+
+        /* ========== TABS ========== */
         .tab-active {
             background: linear-gradient(135deg, #A67C52 0%, #B8956A 100%);
             color: white;
         }
-        
-        /* Testimonial Slider */
+
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover:not(.tab-active) {
+            background: rgba(26, 26, 26, 0.05);
+        }
+
+        /* ========== TESTIMONIALS ========== */
         .testimonial-slide {
             transition: all 0.5s ease;
         }
-        
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            animation: float 3s ease-in-out infinite;
+
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f5f5f0 100%);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+
+        /* ========== STATUS BADGE ========== */
+        .status-badge {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+            animation: glowPulse 2s ease-in-out infinite;
         }
-        
-        ::-webkit-scrollbar-track {
-            background: #F5F5DC;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #A67C52;
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8B6540;
-        }
-        
-        /* Decorative Elements */
-        .coffee-beans {
-            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><circle cx='20' cy='20' r='8' fill='%23A67C52' opacity='0.15'/><ellipse cx='20' cy='20' rx='3' ry='8' fill='%231A1A1A' opacity='0.1'/></svg>");
-            background-size: 40px 40px;
-        }
-        
-        /* Gold Line Decoration */
+
+        /* ========== GOLD DECORATIONS ========== */
         .gold-line {
             height: 2px;
             background: linear-gradient(90deg, transparent, #A67C52, transparent);
         }
-        
-        /* Image placeholder styled */
-        .img-placeholder {
+
+        .gold-text {
+            background: linear-gradient(135deg, #A67C52, #B8956A, #A67C52);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ========== IMAGE PLACEHOLDERS ========== */
+        .img-gradient {
             background: linear-gradient(135deg, #2D2D2D 0%, #1A1A1A 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        }
+
+        .img-gradient::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(166, 124, 82, 0.1) 50%, transparent 60%);
+            animation: shimmer 3s infinite;
+        }
+
+        /* ========== FLOATING ELEMENTS ========== */
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .blob-animation {
+            animation: blob 7s ease-in-out infinite;
+        }
+
+        /* ========== SCROLLBAR ========== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F5F5DC;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #A67C52;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B6540;
+        }
+
+        /* ========== ADDITIONAL ENHANCED STYLES ========== */
+        
+        /* ========== TYPEWRITER EFFECT ========== */
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #A67C52;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #A67C52 }
+        }
+
+        /* ========== COUNTER ANIMATION ========== */
+        .counter-up {
+            transition: all 0.5s ease-out;
+        }
+
+        /* ========== MORPHIC BUTTONS ========== */
+        .btn-morphic {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            box-shadow:  8px 8px 16px #d1d1d1, -8px -8px 16px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-morphic:hover {
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            box-shadow:  4px 4px 8px #d1d1d1, -4px -4px 8px #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* ========== 3D CARD ========== */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+
+        .card-3d:hover {
+            transform: rotateX(5deg) rotateY(-5deg) translateZ(10px);
+        }
+
+        /* ========== RIPPLE EFFECT ========== */
+        .ripple {
             position: relative;
             overflow: hidden;
         }
-        
-        .img-placeholder::before {
-            content: '☕';
-            font-size: 3rem;
-            opacity: 0.3;
+
+        .ripple::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            background: radial-gradient(circle, rgba(166, 124, 82, 0.4) 0%, transparent 70%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s;
         }
-        
-        .img-placeholder.coffee::before {
-            content: '☕';
+
+        .ripple:active::after {
+            transform: translate(-50%, -50%) scale(2);
         }
-        
-        .img-placeholder.food::before {
-            content: '🍽️';
+
+        /* ========== CUSTOM CURSOR ========== */
+        .cursor-pointer-custom {
+            cursor: pointer;
         }
-        
-        /* Status Badge */
-        .status-badge {
-            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-            box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+
+        /* ========== SKEW HERO ========== */
+        .skew-hero {
+            transform: skewY(-3deg);
+            transform-origin: top left;
         }
-        
-        /* Section Reveal Animation */
-        .reveal {
+
+        /* ========== LIQUID BUTTON ========== */
+        .btn-liquid {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-liquid::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-liquid:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* ========== BETTER FOCUS STATES ========== */
+        *:focus-visible {
+            outline: 2px solid #A67C52;
+            outline-offset: 2px;
+        }
+
+        /* ========== SELECTION COLOR ========== */
+        ::selection {
+            background: #A67C52;
+            color: white;
+        }
+
+        /* ========== SMOOTH TEXT RENDERING ========== */
+        .smooth-text {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* ========== CARD HOVER 3D ========== */
+        .hover-lift-3d {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hover-lift-3d:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(166, 124, 82, 0.2);
+        }
+
+        /* ========== IMAGE ZOOM HOVER ========== */
+        .img-zoom-hover {
+            overflow: hidden;
+        }
+
+        .img-zoom-hover img {
+            transition: transform 0.6s ease;
+        }
+
+        .img-zoom-hover:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ========== BETTER TOOLTIP ========== */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            padding: 8px 12px;
+            background: #1A1A1A;
+            color: #F5F5DC;
+            font-size: 12px;
+            border-radius: 6px;
+            white-space: nowrap;
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
-        
-        .reveal.active {
+
+        .tooltip:hover::after {
             opacity: 1;
-            transform: translateY(0);
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* ========== PROGRESS BAR ========== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #A67C52, #B8956A);
+            z-index: 10000;
+            transition: width 0.1s;
+        }
+
+        /* ========== GALLERY GRID ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        /* ========== ACCORDION ========== */
+        .accordion-item {
+            border: 1px solid rgba(26, 26, 26, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(166, 124, 82, 0.05);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 200px;
+        }
+
+        /* ========== BADGE STYLES ========== */
+        .badge-new {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+        }
+
+        .badge-popular {
+            background: linear-gradient(135deg, #A67C52, #B8956A);
+        }
+
+        .badge-sale {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+        }
+
+        /* ========== MODAL ========== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        /* ========== BREADCRUMBS ========== */
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .breadcrumbs a {
+            color: #A67C52;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumbs a:hover {
+            color: #8B6540;
+        }
+
+        .breadcrumbs span {
+            color: #1A1A1A;
+        }
+
+        /* ========== SHARE BUTTONS ========== */
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ========== QUOTE CARD ========== */
+        .quote-card {
+            position: relative;
+            padding: 24px;
+            background: linear-gradient(145deg, #ffffff, #f5f5f0);
+            border-left: 4px solid #A67C52;
+        }
+
+        .quote-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            font-size: 72px;
+            color: #A67C52;
+            opacity: 0.2;
+            font-family: serif;
+        }
+
+        /* ========== FEATURE CARD ========== */
+        .feature-card {
+            padding: 32px;
+            background: white;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(166, 124, 82, 0.15);
+        }
+
+        /* ========== PRICING CARD ========== */
+        .pricing-card {
+            padding: 32px;
+            background: white;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #A67C52;
+            transform: scale(1.05);
+        }
+
+        /* ========== COUNTDOWN ========== */
+        .countdown {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .countdown-item {
+            text-align: center;
+            padding: 16px 24px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .countdown-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #A67C52;
+        }
+
+        .countdown-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* ========== ENHANCED RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hide-mobile {
+                display: none !important;
+            }
+            
+            .text-mobile-center {
+                text-align: center !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hide-desktop {
+                display: none !important;
+            }
+        }
+
+        /* ========== ACCESSIBILITY ========== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ========== REDUCED MOTION ========== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ========== SECTIONS ========== */
+        .section-dark {
+            background: linear-gradient(180deg, #1A1A1A 0%, #2D2D2D 100%);
+        }
+
+        .section-pattern {
+            background-color: #F5F5DC;
+            background-image: radial-gradient(#A67C52 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer-gradient {
+            background: linear-gradient(180deg, #1A1A1A 0%, #0a0a0a 100%);
+        }
+
+        /* ========== LOADING ANIMATION ========== */
+        .loading-dot {
+            animation: bounceSlow 1.4s infinite ease-in-out both;
+        }
+
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+        .loading-dot:nth-child(3) { animation-delay: 0s; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .reveal, .reveal-left, .reveal-right {
+                transform: translateY(20px);
+            }
         }
     </style>
 </head>
 <body class="font-sans">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-[9999] hero-gradient flex items-center justify-center">
+        <div class="text-center">
+            <div class="flex justify-center gap-2 mb-4">
+                <div class="loading-dot w-4 h-4 bg-wood rounded-full"></div>
+                <div class="loading-dot w-4 h-4 bg-wood rounded-full"></div>
+                <div class="loading-dot w-4 h-4 bg-wood rounded-full"></div>
+            </div>
+            <p class="font-serif text-cream text-xl">Legend Coffee</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav id="navbar" class="nav-scroll fixed top-0 left-0 right-0 z-50 py-4 px-6">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2">
-                <span class="text-2xl">☕</span>
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="text-2xl transition-transform group-hover:rotate-12">☕</span>
                 <span class="font-serif text-xl font-bold text-cream">Legend Coffee</span>
             </a>
             
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8">
-                <a href="#menu" class="text-cream/80 hover:text-wood transition text-sm font-medium">Menu</a>
-                <a href="#tentang" class="text-cream/80 hover:text-wood transition text-sm font-medium">Tentang</a>
-                <a href="#ulasan" class="text-cream/80 hover:text-wood transition text-sm font-medium">Ulasan</a>
-                <a href="#lokasi" class="text-cream/80 hover:text-wood transition text-sm font-medium">Lokasi</a>
+                <a href="#menu" class="text-cream/80 hover:text-wood transition text-sm font-medium relative group">
+                    Menu
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-wood transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#tentang" class="text-cream/80 hover:text-wood transition text-sm font-medium relative group">
+                    Tentang
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-wood transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#ulasan" class="text-cream/80 hover:text-wood transition text-sm font-medium relative group">
+                    Ulasan
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-wood transition-all group-hover:w-full"></span>
+                </a>
+                <a href="#lokasi" class="text-cream/80 hover:text-wood transition text-sm font-medium relative group">
+                    Lokasi
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-wood transition-all group-hover:w-full"></span>
+                </a>
             </div>
             
             <!-- CTA Button -->
-            <a href="#menu" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 glass rounded-full text-cream text-sm font-medium hover:bg-wood/30 transition">
-                Pesan Sekarang
+            <a href="#menu" class="hidden md:inline-flex items-center gap-2 px-6 py-2.5 glass rounded-full text-cream text-sm font-semibold hover:bg-wood/30 transition-all hover:scale-105">
+                <span>Pesan Sekarang</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
             </a>
             
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-cream">
+            <button id="mobile-menu-btn" class="md:hidden text-cream p-2">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -262,72 +907,89 @@
     </nav>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-charcoal/95 backdrop-blur-lg">
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-charcoal/98 backdrop-blur-xl">
         <div class="flex flex-col items-center justify-center h-full gap-8">
-            <a href="#menu" class="text-cream text-xl font-serif">Menu</a>
-            <a href="#tentang" class="text-cream text-xl font-serif">Tentang</a>
-            <a href="#ulasan" class="text-cream text-xl font-serif">Ulasan</a>
-            <a href="#lokasi" class="text-cream text-xl font-serif">Lokasi</a>
-            <a href="#menu" class="px-8 py-3 glass rounded-full text-cream">Pesan Sekarang</a>
+            <a href="#menu" class="text-cream text-2xl font-serif hover:text-wood transition">Menu</a>
+            <a href="#tentang" class="text-cream text-2xl font-serif hover:text-wood transition">Tentang</a>
+            <a href="#ulasan" class="text-cream text-2xl font-serif hover:text-wood transition">Ulasan</a>
+            <a href="#lokasi" class="text-cream text-2xl font-serif hover:text-wood transition">Lokasi</a>
+            <a href="#menu" class="mt-4 px-10 py-3 btn-primary rounded-full text-cream">Pesan Sekarang</a>
         </div>
     </div>
     
     <!-- Hero Section -->
     <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- Decorative Elements -->
-        <div class="absolute inset-0 coffee-beans opacity-50"></div>
-        <div class="absolute top-20 left-10 w-32 h-32 border border-wood/20 rounded-full animate-float"></div>
-        <div class="absolute bottom-32 right-20 w-24 h-24 border border-wood/30 rounded-full animate-float" style="animation-delay: 1s;"></div>
+        <!-- Background Elements -->
+        <div class="absolute inset-0 pattern-dots opacity-30"></div>
+        
+        <!-- Animated Blobs -->
+        <div class="absolute top-20 -left-20 w-64 h-64 bg-wood/10 rounded-full blob-animation blur-3xl"></div>
+        <div class="absolute bottom-20 -right-20 w-80 h-80 bg-wood/10 rounded-full blob-animation blur-3xl" style="animation-delay: -2s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-wood/5 rounded-full blob-animation blur-3xl" style="animation-delay: -4s;"></div>
+        
+        <!-- Floating Decorative -->
+        <div class="absolute top-32 left-10 w-20 h-20 border border-wood/20 rounded-full float-animation"></div>
+        <div class="absolute bottom-40 right-16 w-16 h-16 border border-wood/30 rounded-full float-animation" style="animation-delay: -1s;"></div>
+        <div class="absolute top-1/3 right-20 w-12 h-12 bg-wood/20 rounded-full float-animation" style="animation-delay: -0.5s;"></div>
         
         <!-- Content -->
-        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <div class="mb-6">
-                <span class="inline-block px-4 py-1 glass rounded-full text-wood text-sm font-medium">
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <!-- Badge -->
+            <div class="mb-8 reveal opacity-0" style="animation-delay: 0.2s;">
+                <span class="inline-flex items-center gap-2 px-5 py-2 glass rounded-full text-wood text-sm font-medium">
+                    <span class="w-2 h-2 bg-wood rounded-full animate-pulse"></span>
                     ✨ Vintage Meets Modern
                 </span>
             </div>
             
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-cream font-bold mb-6 leading-tight">
+            <!-- Main Title -->
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-cream font-bold mb-6 leading-tight reveal opacity-0" style="animation-delay: 0.4s;">
                 Legend Coffee
             </h1>
             
-            <p class="font-serif text-2xl md:text-3xl text-wood italic mb-8">
+            <!-- Tagline -->
+            <p class="font-serif text-2xl md:text-3xl text-wood italic mb-8 reveal opacity-0" style="animation-delay: 0.6s;">
                 "Legend Never Die, It Just Gets Better"
             </p>
             
-            <p class="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                Nikmati pengalaman kopi Premium di sudut kota Yogyakarta. 
+            <!-- Description -->
+            <p class="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed reveal opacity-0" style="animation-delay: 0.8s;">
+                Nikmati pengalaman kopi premium di sudut kota Yogyakarta. 
                 Perpaduan sempurna antara nuansa kolonial klasik dan budaya anak muda modern.
             </p>
             
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#menu" class="group px-8 py-4 glass rounded-full text-cream text-lg font-semibold hover:bg-wood/40 transition flex items-center gap-3">
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal opacity-0" style="animation-delay: 1s;">
+                <a href="#menu" class="group px-10 py-4 glass rounded-full text-cream text-lg font-semibold hover:bg-wood/30 transition-all hover:scale-105 flex items-center gap-3">
                     <span>Pesan Sekarang</span>
-                    <svg class="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
                 </a>
-                <a href="#tentang" class="px-8 py-4 border border-cream/30 rounded-full text-cream text-lg font-semibold hover:bg-cream/10 transition">
+                <a href="#tentang" class="px-10 py-4 border border-cream/30 rounded-full text-cream text-lg font-semibold hover:bg-cream/10 transition-all">
                     Pelajari Lebih Lanjut
                 </a>
             </div>
             
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                <svg class="w-6 h-6 text-cream/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+                <div class="flex flex-col items-center gap-2 text-cream/50">
+                    <span class="text-xs uppercase tracking-widest">Scroll</span>
+                    <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
     
     <!-- Menu Section -->
-    <section id="menu" class="py-20 px-6 bg-cream">
+    <section id="menu" class="py-24 px-6 bg-cream section-pattern">
         <div class="max-w-7xl mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-16 reveal">
                 <span class="inline-block px-4 py-1 bg-wood/10 rounded-full text-wood text-sm font-medium mb-4">
-                    Best Sellers
+                    ⭐ Best Sellers
                 </span>
                 <h2 class="font-serif text-4xl md:text-5xl text-charcoal font-bold mb-4">
                     Menu Unggulan
@@ -340,33 +1002,34 @@
             
             <!-- Category Tabs -->
             <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
-                <button class="tab-btn tab-active px-6 py-3 rounded-full text-sm font-semibold transition" data-category="all">
+                <button class="tab-btn tab-active px-8 py-3 rounded-full text-sm font-semibold transition-all" data-category="all">
                     Semua
                 </button>
-                <button class="tab-btn px-6 py-3 rounded-full text-sm font-semibold bg-charcoal/5 text-charcoal/70 hover:bg-wood hover:text-white transition" data-category="kopi">
+                <button class="tab-btn px-8 py-3 rounded-full text-sm font-semibold bg-charcoal/5 text-charcoal/70 hover:bg-wood hover:text-white transition-all" data-category="kopi">
                     ☕ Kopi
                 </button>
-                <button class="tab-btn px-6 py-3 rounded-full text-sm font-semibold bg-charcoal/5 text-charcoal/70 hover:bg-wood hover:text-white transition" data-category="hidangan">
-                    🍽️ Hidangan Utama
+                <button class="tab-btn px-8 py-3 rounded-full text-sm font-semibold bg-charcoal/5 text-charcoal/70 hover:bg-wood hover:text-white transition-all" data-category="hidangan">
+                    🍽️ Hidangan
                 </button>
-                <button class="tab-btn px-6 py-3 rounded-full text-sm font-semibold bg-charcoal/5 text-charcoal/70 hover:bg-wood hover:text-white transition" data-category="makanan">
-                    🍪 Makanan Ringan
+                <button class="tab-btn px-8 py-3 rounded-full text-sm font-semibold bg-charcoal/5 text-charcoal/70 hover:bg-wood hover:text-white transition-all" data-category="makanan">
+                    🍪 Camilan
                 </button>
             </div>
             
             <!-- Menu Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6" id="menu-grid">
-                <!-- Menu Item 1 - Cappuccino -->
-                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg" data-category="kopi">
-                    <div class="img-placeholder coffee aspect-square">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-wood text-white text-xs font-semibold rounded-full">Populer</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="menu-grid">
+                <!-- Menu Items with enhanced cards -->
+                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg lift-up" data-category="kopi">
+                    <div class="img-gradient aspect-square relative overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-wood text-white text-xs font-semibold rounded-full">Populer</span>
+                        <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20">☕</div>
                     </div>
                     <div class="p-5">
                         <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Cappuccino</h3>
-                        <p class="text-charcoal/60 text-sm mb-3">Perpaduan sempurna espresso dengan steamed milk</p>
+                        <p class="text-charcoal/60 text-sm mb-3">Espresso dengan steamed milk lembut</p>
                         <div class="price-tag flex items-center justify-between">
                             <span class="text-wood font-bold text-lg">Rp 25.000</span>
-                            <button class="w-10 h-10 bg-wood text-white rounded-full flex items-center justify-center hover:bg-wood-dark transition">
+                            <button class="w-10 h-10 btn-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
@@ -375,17 +1038,17 @@
                     </div>
                 </div>
                 
-                <!-- Menu Item 2 - Aceh Gayo V60 -->
-                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg" data-category="kopi">
-                    <div class="img-placeholder coffee aspect-square">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-wood text-white text-xs font-semibold rounded-full">Signature</span>
+                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg lift-up" data-category="kopi">
+                    <div class="img-gradient aspect-square relative overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-woodLight text-white text-xs font-semibold rounded-full">Signature</span>
+                        <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20">☕</div>
                     </div>
                     <div class="p-5">
                         <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Aceh Gayo V60</h3>
-                        <p class="text-charcoal/60 text-sm mb-3">Kopi single origin terbaik dari Aceh</p>
+                        <p class="text-charcoal/60 text-sm mb-3">Single origin premium dari Aceh</p>
                         <div class="price-tag flex items-center justify-between">
                             <span class="text-wood font-bold text-lg">Rp 35.000</span>
-                            <button class="w-10 h-10 bg-wood text-white rounded-full flex items-center justify-center hover:bg-wood-dark transition">
+                            <button class="w-10 h-10 btn-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
@@ -394,17 +1057,17 @@
                     </div>
                 </div>
                 
-                <!-- Menu Item 3 - Legend Coffee with Susu -->
-                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg" data-category="kopi">
-                    <div class="img-placeholder coffee aspect-square">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-charcoal text-white text-xs font-semibold rounded-full">Favorit</span>
+                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg lift-up" data-category="kopi">
+                    <div class="img-gradient aspect-square relative overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-charcoal text-white text-xs font-semibold rounded-full">Favorit</span>
+                        <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20">☕</div>
                     </div>
                     <div class="p-5">
-                        <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Legend Coffee Susu</h3>
-                        <p class="text-charcoal/60 text-sm mb-3">Signature drink dengan susu premium</p>
+                        <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Legend Susu</h3>
+                        <p class="text-charcoal/60 text-sm mb-3">Signature dengan susu premium</p>
                         <div class="price-tag flex items-center justify-between">
                             <span class="text-wood font-bold text-lg">Rp 28.000</span>
-                            <button class="w-10 h-10 bg-wood text-white rounded-full flex items-center justify-center hover:bg-wood-dark transition">
+                            <button class="w-10 h-10 btn-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
@@ -413,17 +1076,36 @@
                     </div>
                 </div>
                 
-                <!-- Menu Item 4 - Steak Ayam -->
-                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg" data-category="hidangan">
-                    <div class="img-placeholder food aspect-square">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-wood text-white text-xs font-semibold rounded-full">Best Seller</span>
+                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg lift-up" data-category="kopi">
+                    <div class="img-gradient aspect-square relative overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-woodDark text-white text-xs font-semibold rounded-full">New</span>
+                        <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20">🧋</div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Coffee Float</h3>
+                        <p class="text-charcoal/60 text-sm mb-3">Espresso dengan es krim</p>
+                        <div class="price-tag flex items-center justify-between">
+                            <span class="text-wood font-bold text-lg">Rp 30.000</span>
+                            <button class="w-10 h-10 btn-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg lift-up" data-category="hidangan">
+                    <div class="img-gradient aspect-square relative overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-wood text-white text-xs font-semibold rounded-full">Best Seller</span>
+                        <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20">🍖</div>
                     </div>
                     <div class="p-5">
                         <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Steak Ayam</h3>
-                        <p class="text-charcoal/60 text-sm mb-3">Daging ayam premium dengan saus khusus</p>
+                        <p class="text-charcoal/60 text-sm mb-3">Ayam panggang dengan saus special</p>
                         <div class="price-tag flex items-center justify-between">
                             <span class="text-wood font-bold text-lg">Rp 45.000</span>
-                            <button class="w-10 h-10 bg-wood text-white rounded-full flex items-center justify-center hover:bg-wood-dark transition">
+                            <button class="w-10 h-10 btn-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
@@ -432,17 +1114,17 @@
                     </div>
                 </div>
                 
-                <!-- Menu Item 5 - Nasi Goreng Ayam -->
-                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg" data-category="hidangan">
-                    <div class="img-placeholder food aspect-square">
-                        <span class="absolute top-4 left-4 px-3 py-1 bg-charcoal text-white text-xs font-semibold rounded-full">Recommended</span>
+                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg lift-up" data-category="hidangan">
+                    <div class="img-gradient aspect-square relative overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-charcoal text-white text-xs font-semibold rounded-full">Favorite</span>
+                        <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20">🍳</div>
                     </div>
                     <div class="p-5">
                         <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Nasi Goreng Ayam</h3>
-                        <p class="text-charcoal/60 text-sm mb-3">Resep tradisional dengan sentuhan modern</p>
+                        <p class="text-charcoal/60 text-sm mb-3">Resep tradisional favorit</p>
                         <div class="price-tag flex items-center justify-between">
                             <span class="text-wood font-bold text-lg">Rp 30.000</span>
-                            <button class="w-10 h-10 bg-wood text-white rounded-full flex items-center justify-center hover:bg-wood-dark transition">
+                            <button class="w-10 h-10 btn-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
@@ -451,15 +1133,17 @@
                     </div>
                 </div>
                 
-                <!-- Menu Item 6 - Milkshake Cokelat -->
-                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg" data-category="makanan">
-                    <div class="img-placeholder coffee aspect-square"></div>
+                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg lift-up" data-category="makanan">
+                    <div class="img-gradient aspect-square relative overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-woodLight text-white text-xs font-semibold rounded-full">Sweet</span>
+                        <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20">🍫</div>
+                    </div>
                     <div class="p-5">
                         <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Milkshake Cokelat</h3>
-                        <p class="text-charcoal/60 text-sm mb-3">Cokelat premium dengan es krim vanilla</p>
+                        <p class="text-charcoal/60 text-sm mb-3">Cokelat dengan es krim vanilla</p>
                         <div class="price-tag flex items-center justify-between">
                             <span class="text-wood font-bold text-lg">Rp 28.000</span>
-                            <button class="w-10 h-10 bg-wood text-white rounded-full flex items-center justify-center hover:bg-wood-dark transition">
+                            <button class="w-10 h-10 btn-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
@@ -468,32 +1152,17 @@
                     </div>
                 </div>
                 
-                <!-- Menu Item 7 - Pisang Bakar -->
-                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg" data-category="makanan">
-                    <div class="img-placeholder food aspect-square"></div>
+                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg lift-up" data-category="makanan">
+                    <div class="img-gradient aspect-square relative overflow-hidden">
+                        <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-woodDark text-white text-xs font-semibold rounded-full">Snack</span>
+                        <div class="absolute inset-0 flex items-center justify-center text-6xl opacity-20">🍌</div>
+                    </div>
                     <div class="p-5">
-                        <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Pisang Bakar Coklat Keju</h3>
-                        <p class="text-charcoal/60 text-sm mb-3">Pisang bakar dengan topping coklat dan keju</p>
+                        <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Pisang Bakar Coklat</h3>
+                        <p class="text-charcoal/60 text-sm mb-3">Topping coklat dan keju</p>
                         <div class="price-tag flex items-center justify-between">
                             <span class="text-wood font-bold text-lg">Rp 22.000</span>
-                            <button class="w-10 h-10 bg-wood text-white rounded-full flex items-center justify-center hover:bg-wood-dark transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Menu Item 8 - Jagung Bakar -->
-                <div class="menu-card group bg-white rounded-2xl overflow-hidden shadow-lg" data-category="makanan">
-                    <div class="img-placeholder food aspect-square"></div>
-                    <div class="p-5">
-                        <h3 class="font-serif text-xl text-charcoal font-semibold mb-2">Jagung Bakar</h3>
-                        <p class="text-charcoal/60 text-sm mb-3">Jagung bakar dengan多种口味</p>
-                        <div class="price-tag flex items-center justify-between">
-                            <span class="text-wood font-bold text-lg">Rp 18.000</span>
-                            <button class="w-10 h-10 bg-wood text-white rounded-full flex items-center justify-center hover:bg-wood-dark transition">
+                            <button class="w-10 h-10 btn-primary text-white rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                 </svg>
@@ -503,9 +1172,9 @@
                 </div>
             </div>
             
-            <!-- View More Button -->
+            <!-- View More -->
             <div class="text-center mt-12 reveal">
-                <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-charcoal text-cream rounded-full text-lg font-semibold hover:bg-wood-dark transition">
+                <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-charcoal text-cream rounded-full text-lg font-semibold hover:bg-woodDark transition-all hover:scale-105">
                     Lihat Menu Lengkap
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -515,42 +1184,42 @@
         </div>
     </section>
     
-    <!-- Tentang Section -->
-    <section id="tentang" class="py-20 px-6 bg-charcoal relative overflow-hidden">
-        <!-- Decorative -->
-        <div class="absolute inset-0 coffee-beans opacity-30"></div>
-        <div class="absolute top-0 right-0 w-96 h-96 bg-wood/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-wood/5 rounded-full blur-3xl"></div>
+    <!-- About Section -->
+    <section id="tentang" class="py-24 px-6 section-dark relative overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 pattern-dots opacity-10"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-wood/5 rounded-full blob-animation blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-wood/5 rounded-full blob-animation blur-3xl" style="animation-delay: -3s;"></div>
         
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Image Side -->
-                <div class="reveal">
+                <div class="reveal-left">
                     <div class="relative">
-                        <div class="aspect-[4/5] bg-gradient-to-br from-wood/20 to-charcoal rounded-3xl overflow-hidden">
+                        <div class="aspect-[4/5] bg-gradient-to-br from-wood/20 to-charcoalLight rounded-3xl overflow-hidden relative">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="text-center p-8">
-                                    <span class="text-8xl">🏠</span>
-                                    <h3 class="font-serif text-3xl text-cream mt-4">Rumah Lawasan</h3>
+                                    <span class="text-8xl block mb-4">🏠</span>
+                                    <h3 class="font-serif text-3xl text-cream">Rumah Lawasan</h3>
                                     <p class="text-cream/60 mt-2">Since 2015</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Decorative Frame -->
-                        <div class="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-wood rounded-2xl bg-charcoal flex items-center justify-center">
-                            <span class="text-wood font-serif text-xl">Est. 2015</span>
+                        <!-- Frame decorative -->
+                        <div class="absolute -bottom-6 -right-6 w-28 h-28 border-2 border-wood rounded-2xl bg-charcoal flex items-center justify-center">
+                            <span class="text-wood font-serif text-lg">Est. '15</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Content Side -->
-                <div class="reveal">
+                <div class="reveal-right">
                     <span class="inline-block px-4 py-1 bg-wood/10 rounded-full text-wood text-sm font-medium mb-4">
-                        Tentang Kami
+                        📜 Tentang Kami
                     </span>
                     <h2 class="font-serif text-4xl md:text-5xl text-cream font-bold mb-6">
-                        Suasana "Rumah Lawasan"<br/>
-                        <span class="text-wood">Vintage Bertemu Modern</span>
+                        Suasana <span class="gold-text">"Rumah Lawasan"</span><br/>
+                        Vintage Bertemu Modern
                     </h2>
                     <div class="gold-line w-24 mb-6"></div>
                     
@@ -565,13 +1234,13 @@
                         menggunakan biji kopi premium dari berbagai daerah di Indonesia.
                     </p>
                     
-                    <!-- Status Badge -->
+                    <!-- Status -->
                     <div class="flex flex-wrap items-center gap-4 mb-8">
                         <div class="flex items-center gap-2 px-4 py-2 rounded-full status-badge text-white">
                             <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                             <span class="font-semibold">Buka Sekarang</span>
                         </div>
-                        <div class="flex items-center gap-2 px-4 py-2 bg-wood/10 rounded-full text-cream">
+                        <div class="flex items-center gap-2 px-4 py-2 glass rounded-full text-cream">
                             <svg class="w-5 h-5 text-wood" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
@@ -580,22 +1249,22 @@
                     </div>
                     
                     <!-- Features -->
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-white/10 transition">
                             <span class="text-2xl">📶</span>
-                            <span class="text-cream">Free WiFi</span>
+                            <span class="text-cream text-sm">Free WiFi</span>
                         </div>
-                        <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl">
+                        <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-white/10 transition">
                             <span class="text-2xl">🪑</span>
-                            <span class="text-cream"> Outdoor Seating</span>
+                            <span class="text-cream text-sm">Outdoor</span>
                         </div>
-                        <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl">
+                        <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-white/10 transition">
                             <span class="text-2xl">🔌</span>
-                            <span class="text-cream">Charging Point</span>
+                            <span class="text-cream text-sm">Charging</span>
                         </div>
-                        <div class="flex items-center gap-3 p-4 bg-white/5 rounded-xl">
+                        <div class="flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-white/10 transition">
                             <span class="text-2xl">🎮</span>
-                            <span class="text-cream">Meet & Greet</span>
+                            <span class="text-cream text-sm">Meet & Greet</span>
                         </div>
                     </div>
                 </div>
@@ -603,40 +1272,39 @@
         </div>
     </section>
     
-    <!-- Testimonial Section -->
-    <section id="ulasan" class="py-20 px-6 bg-cream">
+    <!-- Testimonials Section -->
+    <section id="ulasan" class="py-24 px-6 bg-cream section-pattern">
         <div class="max-w-7xl mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-16 reveal">
                 <span class="inline-block px-4 py-1 bg-wood/10 rounded-full text-wood text-sm font-medium mb-4">
-                    Testimonials
+                    💬 Testimonials
                 </span>
                 <h2 class="font-serif text-4xl md:text-5xl text-charcoal font-bold mb-4">
                     Apa Kata Pelanggan?
                 </h2>
                 <div class="gold-line w-32 mx-auto mb-4"></div>
                 <p class="text-charcoal/70 text-lg max-w-xl mx-auto">
-                    Pengalaman langsung dari para pecinta kopi yang telah merasakan keindahan Legend Coffee
+                    Pengalaman langsung dari para pecinta kopi
                 </p>
             </div>
             
             <!-- Testimonial Slider -->
             <div class="relative reveal">
                 <div class="overflow-hidden" id="testimonial-container">
-                    <div class="flex transition-transform duration-500 ease-in-out" id="testimonial-track">
-                        <!-- Testimonial 1 -->
+                    <div class="flex transition-transform duration-500" id="testimonial-track">
                         <div class="testimonial-slide flex-shrink-0 w-full px-4">
-                            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg">
+                            <div class="testimonial-card rounded-3xl p-8 md:p-10">
                                 <div class="flex items-center gap-1 mb-4">
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
                                 </div>
                                 <blockquote class="font-serif text-xl md:text-2xl text-charcoal mb-6">
                                     "Suasana rumah lawasan yang nyaman untuk jatuh cinta. 
-                                    Tempat yang sempurna untuk menghabiskan waktu bersama teman atau pasangan."
+                                    Tempat sempurna menghabiskan waktu bersama teman atau pasangan."
                                 </blockquote>
                                 <div class="flex items-center gap-4">
                                     <div class="w-14 h-14 bg-wood/20 rounded-full flex items-center justify-center">
@@ -650,19 +1318,18 @@
                             </div>
                         </div>
                         
-                        <!-- Testimonial 2 -->
                         <div class="testimonial-slide flex-shrink-0 w-full px-4">
-                            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg">
+                            <div class="testimonial-card rounded-3xl p-8 md:p-10">
                                 <div class="flex items-center gap-1 mb-4">
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
                                 </div>
                                 <blockquote class="font-serif text-xl md:text-2xl text-charcoal mb-6">
-                                    "Menu ala cafe biasa ada mix platter, jagung, toast,'aneka jus, kopi, mie. 
-                                    Semua makanan dan minuman这里 Enak-enak!"
+                                    "Menu bervariasi, dari mix platter, jagung, toast, hingga kopi dan mie. 
+                                    Semua makanan dan minuman here Enak!"
                                 </blockquote>
                                 <div class="flex items-center gap-4">
                                     <div class="w-14 h-14 bg-wood/20 rounded-full flex items-center justify-center">
@@ -676,19 +1343,17 @@
                             </div>
                         </div>
                         
-                        <!-- Testimonial 3 -->
                         <div class="testimonial-slide flex-shrink-0 w-full px-4">
-                            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg">
+                            <div class="testimonial-card rounded-3xl p-8 md:p-10">
                                 <div class="flex items-center gap-1 mb-4">
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
-                                    <span class="text-wood">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
+                                    <span class="text-wood text-xl">★</span>
                                 </div>
                                 <blockquote class="font-serif text-xl md:text-2xl text-charcoal mb-6">
-                                    "Tempat duduk yang nyaman untuk menikmati ibadah, 
-                                    minum kopi, coklat hangat, Wifi, dan jatuh cinta. 
+                                    "Tempat nyaman untuk menikmati kopi, coklat hangat, Wifi, dan jatuh cinta. 
                                     Recommended banget!"
                                 </blockquote>
                                 <div class="flex items-center gap-4">
@@ -705,55 +1370,55 @@
                     </div>
                 </div>
                 
-                <!-- Navigation Dots -->
+                <!-- Dots -->
                 <div class="flex justify-center gap-2 mt-8" id="testimonial-dots">
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-wood transition" data-index="0"></button>
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-charcoal/30 transition" data-index="1"></button>
-                    <button class="testimonial-dot w-3 h-3 rounded-full bg-charcoal/30 transition" data-index="2"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-wood transition-all" data-index="0"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-charcoal/30 transition-all" data-index="1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-charcoal/30 transition-all" data-index="2"></button>
                 </div>
                 
-                <!-- Arrow Navigation -->
-                <button class="absolute top-1/2 -translate-y-1/2 left-0 md:-left-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-wood hover:text-white transition" id="testimonial-prev">
+                <!-- Arrows -->
+                <button class="absolute top-1/2 -translate-y-1/2 left-0 md:-left-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-wood hover:text-white transition-all" id="testimonial-prev">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                 </button>
-                <button class="absolute top-1/2 -translate-y-1/2 right-0 md:-right-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-wood hover:text-white transition" id="testimonial-next">
+                <button class="absolute top-1/2 -translate-y-1/2 right-0 md:-right-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-wood hover:text-white transition-all" id="testimonial-next">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                 </button>
             </div>
             
-            <!-- Rating Summary -->
-            <div class="mt-16 flex flex-wrap items-center justify-center gap-8 reveal">
+            <!-- Stats -->
+            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 mt-16 reveal">
                 <div class="text-center">
-                    <p class="font-serif text-5xl font-bold text-wood">4.4</p>
+                    <p class="font-serif text-4xl md:text-5xl font-bold text-wood">4.4</p>
                     <p class="text-charcoal/60">Rating</p>
                 </div>
                 <div class="text-center">
-                    <p class="font-serif text-5xl font-bold text-wood">10.950+</p>
+                    <p class="font-serif text-4xl md:text-5xl font-bold text-wood">10.950+</p>
                     <p class="text-charcoal/60">Ulasan</p>
                 </div>
                 <div class="text-center">
-                    <p class="font-serif text-5xl font-bold text-wood">650+</p>
-                    <p class="text-charcoal/60">Orang Melaporkan</p>
+                    <p class="font-serif text-4xl md:text-5xl font-bold text-wood">650+</p>
+                    <p class="text-charcoal/60">Report</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Lokasi Section -->
-    <section id="lokasi" class="py-20 px-6 bg-charcoal">
+    <!-- Location Section -->
+    <section id="lokasi" class="py-24 px-6 section-dark">
         <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Info Side -->
-                <div class="reveal">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Info -->
+                <div class="reveal-left">
                     <span class="inline-block px-4 py-1 bg-wood/10 rounded-full text-wood text-sm font-medium mb-4">
-                        Kunjungi Kami
+                        📍 Kunjungi Kami
                     </span>
                     <h2 class="font-serif text-4xl md:text-5xl text-cream font-bold mb-6">
-                        Legend Coffee <span class="text-wood">Yogyakarta</span>
+                        Legend Coffee <span class="gold-text">Yogyakarta</span>
                     </h2>
                     <div class="gold-line w-24 mb-6"></div>
                     
@@ -776,17 +1441,17 @@
                             <div>
                                 <h4 class="font-semibold text-cream mb-1">Jam Buka</h4>
                                 <p class="text-cream/70">Setiap Hari: 08.00 - 01.00</p>
-                                <p class="text-cream/60 text-sm">*(Jam Sibuk: Selasa, Kamis Malam)</p>
+                                <p class="text-cream/60 text-sm">Ramai: Selasa & Kamis Malam</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <span class="text-xl">💬</span>
+                                <span class="text-xl">📱</span>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-cream mb-1">Hubungi Kami</h4>
-                                <a href="tel:+6287705370974" class="text-wood hover:text-wood-light transition">
+                                <h4 class="font-semibold text-cream mb-1">Hubungi</h4>
+                                <a href="tel:+6287705370974" class="text-wood hover:text-woodLight transition">
                                     +62 877-0537-0974
                                 </a>
                             </div>
@@ -797,47 +1462,47 @@
                                 <span class="text-xl">🌐</span>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-cream mb-1">Online</h4>
-                                <a href="https://legendcoffeejogja.com" target="_blank" class="text-wood hover:text-wood-light transition">
+                                <h4 class="font-semibold text-cream mb-1">Website</h4>
+                                <a href="https://legendcoffeejogja.com" target="_blank" class="text-wood hover:text-woodLight transition">
                                     legendcoffeejogja.com
                                 </a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Social Media -->
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center hover:bg-wood hover:text-white transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <!-- Social -->
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center hover:bg-wood hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.503 1.508 7.012-.833-.025-1.617-.254-2.287-.605.087 1.598.621 2.966 1.464 3.864-.638.175-1.304.162-1.892-.059.575 1.771 2.034 3.061 3.831 3.103-2.616 2.051-5.91 2.511-9.143 2.256-.659-1.563-1.025-3.372-1.025-5.195 0-3.424 2.759-6.208 6.159-6.208 4.095 0 6.738 2.885 7.373 6.59.579-.439 1.075-1.017 1.472-1.702z"/>
                             </svg>
                         </a>
-                        <a href="#" class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center hover:bg-wood hover:text-white transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="#" class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center hover:bg-wood hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                         </a>
-                        <a href="https://linktr.ee/legendcoffeejogja" target="_blank" class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center hover:bg-wood hover:text-white transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.961 16.523c-.188-.247-.487-.404-.817-.404-.104 0-.208.018-.311.05-.103.033-.2.082-.293.143l-3.103 2.054c-.37.184-.822.102-1.009-.184-.187-.285-.103-.75.184-.935l3.102-2.054c.28-.14.494-.401.571-.726.078-.325.016-.68-.173-.946l-.002-.002c-.282-.398-.282-1.005 0-1.403l3.104-3.104c.281-.281.688-.281.969 0 .281.281.281.688 0 .969l-3.104 3.104c-.094.094-.145.222-.145.354 0 .131.051.26.145.354.281.281.688.281.969 0 .281-.281.281-.688 0-.969l2.052-2.052c.092-.092.214-.145.344-.145.13 0 .252.053.344.145.281.281.281.688 0 .969l-2.052 2.052c-.281.281-.281.754 0 1.035.188.187.438.275.698.275.26 0 .52-.088.709-.275l3.102-2.054c.37-.184.488-.658.184-.935-.187-.285-.64-.368-1.009-.184l-3.103 2.054c-.093.062-.19.109-.293.143-.103.032-.207.05-.311.05-.33 0-.629-.157-.817-.404-.188-.247-.239-.58-.14-.908.098-.329.328-.595.64-.74l3.103-2.054c.37-.184.822-.102 1.009.184.187.285.186.75-.184.935l-2.052 2.052c-.093-.093-.216-.146-.346-.146-.13 0-.252.053-.344.146-.281.281-.281.688 0 .969.281.281.688.281.969 0l2.052-2.052c.093-.093.214-.146.344-.146.13 0 .252.053.344.146z"/>
+                        <a href="https://linktr.ee/legendcoffeejogja" target="_blank" class="w-12 h-12 bg-wood/10 rounded-xl flex items-center justify-center hover:bg-wood hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Map Placeholder -->
-                <div class="reveal">
-                    <div class="aspect-square lg:aspect-auto bg-gradient-to-br from-wood/20 to-charcoal rounded-3xl overflow-hidden flex items-center justify-center">
-                        <div class="text-center p-8">
+                <!-- Map -->
+                <div class="reveal-right">
+                    <div class="aspect-square lg:aspect-auto bg-gradient-to-br from-wood/20 to-charcoal rounded-3xl overflow-hidden flex items-center justify-center p-8">
+                        <div class="text-center">
                             <span class="text-6xl mb-4 block">🗺️</span>
                             <h3 class="font-serif text-2xl text-cream mb-2">Peta Lokasi</h3>
-                            <p class="text-cream/70 mb-6">Klik untuk melihat peta lengkap</p>
-                            <a href="https://maps.google.com/?q=Legend+Coffee+Yogyakarta" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-wood text-white rounded-full hover:bg-wood-dark transition">
+                            <p class="text-cream/70 mb-6">Klik untuk melihat peta</p>
+                            <a href="https://maps.google.com/?q=Legend+Coffee+Yogyakarta" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 btn-primary rounded-full text-white">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
-                                Buka di Google Maps
+                                Buka di Maps
                             </a>
                         </div>
                     </div>
@@ -847,7 +1512,7 @@
     </section>
     
     <!-- Footer -->
-    <footer class="py-8 px-6 bg-charcoal border-t border-white/10">
+    <footer class="py-8 px-6 footer-gradient border-t border-white/10">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
@@ -862,110 +1527,153 @@
                 <div class="flex items-center gap-2 text-cream/60 text-sm">
                     <span>Dibuat dengan</span>
                     <span class="text-red-500">❤️</span>
-                    <span>oleh Legend Coffee Team</span>
+                    <span>oleh tim Legend Coffee</span>
                 </div>
             </div>
         </div>
     </footer>
     
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6287705370974" target="_blank" class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition hover:scale-110">
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6287705370974" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-all hover:scale-110 float-animation">
         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.871 3.513l1.438-1.438c-2.58-2.902-6.238-4.464-10.309-4.464-6.557 0-11.892 5.333-11.892 11.867 0 1.999.503 3.917 1.457 5.574l-1.439 1.439zm12.287-7.887c1.363-.192 2.746-.296 4.132-.264.077-.001.148-.003.221-.003.375-.001 1.823-.001 4.232.001 1.386.001 2.775.104 4.132.264 1.153.144 2.111.408 2.875.801.765-.765 1.632-1.752 1.632-1.752s-1.375-1.375-2.875-1.752c-2.272-.577-4.805-.577-7.077-.001-2.272.576-4.805.577-7.077.001-2.272-.576-4.805-.577-7.077-.001-2.272.576-4.805.577-7.077.001-.062.001-.123.001-.185-.375.001-1.375.001-2.001.001-2.629-.001-5.465-.001-6.629 1.263-1.263 2.878-1.263 4.629 0 1.751 1.751 2.001 2.751 2.001 4.629 0 .626 0 1.375.001 2.001 0 .062-.001.123-.001.185.001-1.375-.576-2.752-1.627-3.878l-1.627-1.627s-1.751-1.001-2.752-1.001c-.626 0-1.251.001-1.877.001-1.564 0-3.129.001-4.693.001-1.251.001-1.876.751-1.876 1.751s.626 1.876 2.001 2.251c1.376.376 2.502.501 3.003.751 1.251.626 2.002.501 2.002.501s.75-.001 1.251-.001c.501 0 1.002.001 1.377.001.876.125 1.376.25 1.376.5 0 .125 0 .375-.251.625-.251.251-2.252.876-3.628 1.751-.875.625-1.751 1.251-2.502 1.251-.751 0-1.251-.376-1.626-.751-.376-.376-.751-1.001-.751-1.626s.501-1.251 1.001-1.626l.751-.751s-1.001 0-1.376.001c-.376 0-.751-.001-1.127-.001-.875-.125-1.625-.375-2.127-.75-.752-.501-1.377-1.001-1.377-1.001s.375-.001.875-.001z"/>
         </svg>
     </a>
     
-    <!-- JavaScript -->
+    <!-- JavaScript - Enhanced Interactivity -->
     <script>
-        // Wait for DOM
         document.addEventListener('DOMContentLoaded', function() {
-            // =====================
-            // Navigation Scroll
-            // =====================
+            // ====== LOADING SCREEN ======
+            const loadingScreen = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => loadingScreen.style.display = 'none', 500);
+            }, 1500);
+
+            // ====== PROGRESS BAR ======
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            document.body.appendChild(progressBar);
+            
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY || window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (scrollTop / docHeight) * 100;
+                progressBar.style.width = progress + '%';
+            });
+
+            // ====== NAVBAR SCROLL ======
             const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // ====== MOBILE MENU ======
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             
-            // Scroll effect
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    document.body.style.overflow = 'hidden';
                 } else {
-                    navbar.classList.remove('scrolled');
+                    document.body.style.overflow = '';
                 }
             });
             
-            // Mobile menu toggle
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Close mobile menu on link click
             mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // ====== SCROLL TO TOP ======
+            const scrollToTopBtn = document.createElement('button');
+            scrollToTopBtn.innerHTML = '↑';
+            scrollToTopBtn.className = 'fixed bottom-24 right-6 z-40 w-12 h-12 bg-wood text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transition-opacity hover:bg-woodDark';
+            scrollToTopBtn.style.transform = 'rotate(-90deg)';
+            document.body.appendChild(scrollToTopBtn);
+            
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             
-            // =====================
-            // Reveal on Scroll
-            // =====================
-            const revealElements = document.querySelectorAll('.reveal');
+            window.addEventListener('scroll', () => {
+                scrollToTopBtn.style.opacity = window.scrollY > 500 ? '1' : '0';
+            });
+
+            // ====== REVEAL ANIMATIONS WITH STAGGER ======
+            const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            let revealDelay = 0;
             
-            const revealOnScroll = () => {
-                revealElements.forEach(el => {
-                    const elementTop = el.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementTop < windowHeight - 100) {
-                        el.classList.add('active');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('active');
+                            entry.target.style.opacity = '1';
+                        }, revealDelay * 100);
+                        revealDelay++;
+                        revealObserver.unobserve(entry.target);
                     }
                 });
-            };
+            }, { threshold: 0.1 });
             
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Initial check
+            revealElements.forEach((el, i) => {
+                el.style.opacity = '0';
+                el.style.transition = `opacity 0.8s ease, transform 0.8s ease`;
+                revealObserver.observe(el);
+            });
+
+            // ====== LAZY LOAD IMAGES ======
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
             
-            // =====================
-            // Menu Filter Tabs
-            // =====================
+            lazyImages.forEach(img => imageObserver.observe(img));
+
+            // ====== MENU FILTER WITH ANIMATION ======
             const tabBtns = document.querySelectorAll('.tab-btn');
             const menuCards = document.querySelectorAll('#menu-grid .menu-card');
             
             tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const category = btn.dataset.category;
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
                     
-                    // Update active tab
+                    // Update tab styles
                     tabBtns.forEach(b => {
                         b.classList.remove('tab-active');
                         b.classList.add('bg-charcoal/5', 'text-charcoal/70');
                     });
-                    btn.classList.add('tab-active');
-                    btn.classList.remove('bg-charcoal/5', 'text-charcoal/70');
+                    this.classList.add('tab-active');
+                    this.classList.remove('bg-charcoal/5', 'text-charcoal/70');
                     
-                    // Filter cards
+                    // Filter with animation
                     menuCards.forEach(card => {
-                        if (category === 'all' || card.dataset.category === category) {
+                        const show = category === 'all' || card.dataset.category === category;
+                        if (show) {
                             card.style.display = 'block';
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
                             setTimeout(() => {
                                 card.style.opacity = '1';
                                 card.style.transform = 'translateY(0)';
                             }, 50);
                         } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
+                            card.style.display = 'none';
                         }
                     });
                 });
             });
-            
-            // =====================
-            // Testimonial Slider
-            // =====================
+
+            // ====== TESTIMONIAL SLIDER WITH TOUCH ======
             const track = document.getElementById('testimonial-track');
             const dots = document.querySelectorAll('.testimonial-dot');
             const prevBtn = document.getElementById('testimonial-prev');
@@ -973,18 +1681,13 @@
             let currentSlide = 0;
             const totalSlides = 3;
             
-            const updateSlider = () => {
+            function updateSlider() {
                 track.style.transform = `translateX(-${currentSlide * 100}%)`;
                 dots.forEach((dot, i) => {
-                    if (i === currentSlide) {
-                        dot.classList.remove('bg-charcoal/30');
-                        dot.classList.add('bg-wood');
-                    } else {
-                        dot.classList.remove('bg-wood');
-                        dot.classList.add('bg-charcoal/30');
-                    }
+                    dot.classList.toggle('bg-wood', i === currentSlide);
+                    dot.classList.toggle('bg-charcoal/30', i !== currentSlide);
                 });
-            };
+            }
             
             prevBtn.addEventListener('click', () => {
                 currentSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
@@ -996,22 +1699,70 @@
                 updateSlider();
             });
             
-            dots.forEach(dot => {
+            dots.forEach((dot, i) => {
                 dot.addEventListener('click', () => {
-                    currentSlide = parseInt(dot.dataset.index);
+                    currentSlide = i;
                     updateSlider();
                 });
             });
             
-            // Auto-slide every 5 seconds
+            // Touch/swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            track.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            track.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        currentSlide = currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
+                    } else {
+                        currentSlide = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+                    }
+                    updateSlider();
+                }
+            }, { passive: true });
+            
+            // Auto slide
             setInterval(() => {
                 currentSlide = currentSlide === totalSlides - 1 ? 0 : currentSlide + 1;
                 updateSlider();
             }, 5000);
+
+            // ====== COUNTUP ANIMATION ======
+            const countElements = document.querySelectorAll('.count-number');
+            const countObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.target);
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+                        
+                        const updateCount = () => {
+                            current += step;
+                            if (current < target) {
+                                el.textContent = Math.floor(current).toLocaleString();
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                el.textContent = target.toLocaleString();
+                            }
+                        };
+                        
+                        updateCount();
+                        countObserver.unobserve(el);
+                    }
+                });
+            });
             
-            // =====================
-            // Smooth Scroll for Anchor Links
-            // =====================
+            countElements.forEach(el => countObserver.observe(el));
+
+            // ====== SMOOTH SCROLL ======
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
@@ -1019,27 +1770,76 @@
                         e.preventDefault();
                         const target = document.querySelector(href);
                         if (target) {
-                            target.scrollIntoView({
+                            const offset = 80;
+                            const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+                            window.scrollTo({
+                                top: targetPosition,
                                 behavior: 'smooth'
                             });
                         }
                     }
                 });
             });
+
+            // ====== KEYBOARD NAVIGATION ======
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // ====== PERFORMANCE: RESIZE THROTTLE ======
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    // Recalculate positions on resize
+                    revealDelay = 0;
+                    revealObserver.disconnect();
+                    revealElements.forEach(el => revealObserver.observe(el));
+                }, 250);
+            });
+
+            // ====== ACTIVE LINK HIGHLIGHT ======
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
             
-            // =====================
-            // Parallax Effect (Subtle)
-            // =====================
-            const parallaxBg = document.querySelector('.parallax-bg');
-            if (parallaxBg) {
-                window.addEventListener('scroll', () => {
-                    const scrolled = window.scrollY;
-                    parallaxBg.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            window.addEventListener('scroll', () => {
+                const scrollPos = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const top = section.offsetTop;
+                    const height = section.offsetHeight;
+                    const id = section.getAttribute('id');
+                    
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        navLinks.forEach(link => {
+                            link.classList.toggle('text-wood', link.getAttribute('href') === '#' + id);
+                            link.classList.toggle('text-cream/80', link.getAttribute('href') !== '#' + id);
+                        });
+                    }
                 });
-            }
-            
-            console.log('Legend Coffee website initialized!');
+            });
+
+            // ====== TRIGGER INITIAL ANIMATIONS ======
+            setTimeout(() => {
+                revealElements.forEach(el => el.classList.add('active'));
+            }, 100);
+
+            // ====== CONSOLE LOG ======
+            console.log('%c☕ Legend Coffee', 'font-size: 24px; color: #A67C52; font-weight: bold;');
+            console.log('%c"Legend Never Die, It Just Gets Better" - %cWebsite initialized!', 'color: #666;', 'color: #A67C52;');
+            console.log('%c✓ Animations loaded', 'color: green;');
+            console.log('%c✓ Interactive features ready', 'color: green;');
+            console.log('%c✓ Smooth scroll enabled', 'color: green;');
         });
+
+        // ====== SERVICE WORKER REGISTRATION (Optional) ======
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Can add PWA support here
+            });
+        }
     </script>
 </body>
 </html>
