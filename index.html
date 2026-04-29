@@ -1692,8 +1692,9 @@
 
             // ====== SCROLL TO TOP ======
             const scrollToTopBtn = document.createElement('button');
-            scrollToTopBtn.innerHTML = '↑';
-            scrollToTopBtn.className = 'fixed bottom-24 right-6 z-40 w-12 h-12 bg-wood text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transition-opacity hover:bg-woodDark';
+            scrollToTopBtn.textContent = '↑';
+            scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
+            scrollToTopBtn.className = 'fixed bottom-24 right-6 z-40 w-12 h-12 bg-wood text-white rounded-full shadow-lg flex items-center justify-center opacity-0 transition-opacity hover:bg-woodDark cursor-pointer';
             scrollToTopBtn.style.transform = 'rotate(-90deg)';
             document.body.appendChild(scrollToTopBtn);
             
@@ -1951,9 +1952,16 @@
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    const email = this.querySelector('input').value;
-                    alert('Terima kasih! Email ' + email + ' telah terdaftar untuk menerima promo dari Legend Coffee.');
-                    this.reset();
+                    const input = this.querySelector('input');
+                    const email = input.value.trim();
+                    
+                    // Basic email sanitization - remove potential XSS
+                    const sanitized = email.replace(/[<>\"'&]/g, '');
+                    
+                    if (sanitized && sanitized.includes('@')) {
+                        alert(`Terima kasih! Email ${sanitized} telah terdaftar untuk menerima promo dari Legend Coffee.`);
+                        input.value = '';
+                    }
                 });
             }
 
